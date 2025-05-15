@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Phantom Signer (RugCheck)</title>
-    <script src="https://cdn.jsdelivr.net/npm/bs58"></script>
+    <script src="https://unpkg.com/bs58@5.0.0/dist/bs58.min.js"></script>
   </head>
   <body>
     <h2>Sign "Sign-in to Rugcheck.xyz"</h2>
@@ -16,6 +16,8 @@
           alert("Phantom wallet not found.");
           return;
         }
+
+        await provider.connect();
 
         const messageStr = "Sign-in to Rugcheck.xyz";
         const timestamp = Math.floor(Date.now() / 1000);
@@ -41,4 +43,3 @@
     </script>
   </body>
 </html>
-
